@@ -5,9 +5,14 @@ package com.mustafa.evbunkk;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.net.*;
+import java.net.http.HttpResponse;
 
-
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 /**
  * Servlet implementation class loginservlet
@@ -15,12 +20,12 @@ import java.net.*;
 @WebServlet("/loginservlet")
 public class App extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+       
     /**
      * @see HttpServlet#HttpServlet()
      */
     public App() { 
-
+    	
     }
 
 	/**
@@ -51,11 +56,13 @@ public class App extends HttpServlet {
 					+ "	<input type=\"submit\" value=\"sessionout\"/>\r\n"
 					+ "</form>");
 			System.out.println("dogetcalled");
-
+			
 			RequestDispatcher rd=request.getRequestDispatcher("index.jsp");
 			rd.forward(request, response);
 		}
-
-
-
+		
+		
+		
 	}
+
+
